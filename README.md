@@ -9,7 +9,6 @@ Eshop with Microservices and Clean architecture
 - [ ] **Task 4:** Basket Service
 - [ ] **Task 5:** Order Service
 - [ ] **Task 6:** Report Service
-- [ ] 
 
 ### ✅ Completed Tasks
 - [x] **Completed Task:** Initial Project.

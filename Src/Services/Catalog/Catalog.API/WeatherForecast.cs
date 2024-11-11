@@ -1,4 +1,4 @@
-namespace IDP.Api
+namespace Catalog.API
 {
     public class WeatherForecast
     {

@@ -5,11 +5,11 @@ Eshop with Microservices and Clean architecture
 ### 🚀 Upcoming Tasks
 - [ ] **Task 1:** IDP Service
 - [ ] **Task 2:** Search Service
-- [ ] **Task 3:** Basket Service
-- [ ] **Task 4:** Order Service
-- [ ] **Task 5:** Report Service
+- [ ] **Task 3:** Order Service
+- [ ] **Task 4:** Report Service
 
 ### ✅ Completed Tasks
 - [x] **Completed Task:** Initial Project.
 - [x] **Completed Task:** Catalog Service.
+- [x] **Completed Task:** Basket Service.
       

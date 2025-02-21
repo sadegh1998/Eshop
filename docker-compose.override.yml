@@ -50,34 +50,47 @@ services:
   catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTP_PORTS=80
       - "DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
     depends_on:
       - catalogdb
     ports:
-      - "8000:8080"
+      - "8000:80"
 
   basket.api:
     container_name: basket.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTP_PORTS=80
       - "CacheSettings:ConnectionString=basketdb:6379" 
+      - "GrpcSettings:DiscountUrl=http://discount.grpc" 
     depends_on:
       - basketdb
     ports:
-      - "8001:8080"
+      - "8001:80"
 
 
   discount.api:
     container_name: discount.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=8080
-      - "DatabaseSettings:ConnectionString=Server= localhost;port=5432;Database=DiscountDb;User Id = admin;Password=admin1234;"
+      - ASPNETCORE_HTTP_PORTS=80
+      - "DatabaseSettings:CONNECTIONSTRINGS__DEFAULT=Server= localhost;port=5432;Database=DiscountDb;User Id = admin;Password=admin1234;"
     depends_on:
       - discountdb
     ports:
-      - "8002:8080"
+      - "8002:80"
     
 
+
+  discount.grpc:
+    container_name: discount.grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=80
+      - "DatabaseSettings:CONNECTIONSTRINGS__DEFAULT=Server= localhost;port=5432;Database=DiscountDb;User Id = admin;Password=admin1234;"
+    depends_on:
+      - discountdb
+    ports:
+     - "8003:80"
+    
